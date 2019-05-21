@@ -11,30 +11,137 @@
         android:id="@+id/lstAntibio"
         style="@style/Widget.AppCompat.ListView.DropDown"
         android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
+        android:layout_height="448dp"
         android:fadeScrollbars="true"
         android:scrollbarAlwaysDrawHorizontalTrack="true"
         android:scrollbarAlwaysDrawVerticalTrack="true"
         android:scrollbars="vertical"
+        android:visibility="visible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView"
+        app:layout_constraintTop_toBottomOf="@+id/nomAntibio"
         tools:scrollbarStyle="insideInset" />
 
     <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="7dp"
+        android:id="@+id/titre"
+        android:layout_width="0dp"
+        android:layout_height="456dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginBottom="39dp"
         android:text="Sélectionner la catégorie :"
-        android:textAppearance="@style/TextAppearance.AppCompat.Light.SearchResult.Title"
-        app:layout_constraintBottom_toTopOf="@+id/lstAntibio"
-        app:layout_constraintStart_toStartOf="@+id/lstAntibio"
+        android:textAppearance="@style/TextAppearance.AppCompat.Light.Widget.PopupMenu.Large"
+        android:visibility="visible"
+        app:layout_constraintBottom_toTopOf="@+id/doseAntibio"
+        app:layout_constraintEnd_toStartOf="@+id/btnRetour"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <Button
+        android:id="@+id/btnRetour"
+        android:layout_width="93dp"
+        android:layout_height="45dp"
+        android:text="Retour"
+        android:visibility="visible"
+        app:layout_constraintBottom_toTopOf="@+id/lstAntibio"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/titre"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <ListView
+        android:id="@+id/lstAntibiotique"
+        style="@style/Widget.AppCompat.ListView.DropDown"
+        android:layout_width="0dp"
+        android:layout_height="469dp"
+        android:scrollbars="vertical"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/titre"
+        app:layout_constraintVertical_bias="0.992" />
+
+    <Button
+        android:id="@+id/retourAntibio"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:layout_marginEnd="5dp"
+        android:layout_marginRight="5dp"
+        android:text="Retour"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/nomAntibio"
+        app:layout_constraintTop_toTopOf="@+id/nomAntibio" />
+
+    <TextView
+        android:id="@+id/nomAntibio"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="6dp"
+        android:text="Nom"
+        android:textAppearance="@style/TextAppearance.AppCompat.Light.Widget.PopupMenu.Large"
+        android:visibility="gone"
+        app:layout_constraintBottom_toTopOf="@+id/nbKilo"
+        app:layout_constraintEnd_toStartOf="@+id/retourAntibio"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/doseAntibio"
+        android:layout_width="0dp"
+        android:layout_height="427dp"
+        android:textAppearance="@style/TextAppearance.AppCompat.Light.Widget.PopupMenu.Large"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/titre" />
+
+    <EditText
+        android:id="@+id/nbKilo"
+        style="@style/TextAppearance.AppCompat.Light.Widget.PopupMenu.Large"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:ems="10"
+        android:inputType="numberDecimal"
+        android:textAppearance="@style/TextAppearance.AppCompat.Light.Widget.PopupMenu.Large"
+        android:visibility="gone"
+        app:layout_constraintBottom_toTopOf="@+id/calculer"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/nomAntibio" />
+
+    <Button
+        android:id="@+id/calculer"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginEnd="6dp"
+        android:layout_marginRight="6dp"
+        android:layout_marginBottom="25dp"
+        android:text="Calculer"
+        android:visibility="gone"
+        app:layout_constraintBottom_toTopOf="@+id/resultatCalcul"
+        app:layout_constraintEnd_toEndOf="@+id/resultatCalcul"
+        app:layout_constraintStart_toStartOf="@+id/nbKilo"
+        app:layout_constraintTop_toBottomOf="@+id/nbKilo" />
+
+    <TextView
+        android:id="@+id/resultatCalcul"
+        android:layout_width="197dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginBottom="307dp"
+        android:textAppearance="@style/TextAppearance.AppCompat.Light.Widget.PopupMenu.Large"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/calculer" />
 </android.support.constraint.ConstraintLayout>
